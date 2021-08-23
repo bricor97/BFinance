@@ -1,0 +1,17 @@
+C:\Users\Brian\Desktop\BFinanceProject\BFinanceBackend\BFinanceBusiness\bin\Debug\net5.0\BFinanceBusiness.deps.json
+C:\Users\Brian\Desktop\BFinanceProject\BFinanceBackend\BFinanceBusiness\bin\Debug\net5.0\BFinanceBusiness.dll
+C:\Users\Brian\Desktop\BFinanceProject\BFinanceBackend\BFinanceBusiness\bin\Debug\net5.0\ref\BFinanceBusiness.dll
+C:\Users\Brian\Desktop\BFinanceProject\BFinanceBackend\BFinanceBusiness\bin\Debug\net5.0\BFinanceBusiness.pdb
+C:\Users\Brian\Desktop\BFinanceProject\BFinanceBackend\BFinanceBusiness\bin\Debug\net5.0\BFinanceDbContext.dll
+C:\Users\Brian\Desktop\BFinanceProject\BFinanceBackend\BFinanceBusiness\bin\Debug\net5.0\BFinanceModels.dll
+C:\Users\Brian\Desktop\BFinanceProject\BFinanceBackend\BFinanceBusiness\bin\Debug\net5.0\BFinanceDbContext.pdb
+C:\Users\Brian\Desktop\BFinanceProject\BFinanceBackend\BFinanceBusiness\bin\Debug\net5.0\BFinanceModels.pdb
+C:\Users\Brian\Desktop\BFinanceProject\BFinanceBackend\BFinanceBusiness\obj\Debug\net5.0\BFinanceBusiness.csproj.AssemblyReference.cache
+C:\Users\Brian\Desktop\BFinanceProject\BFinanceBackend\BFinanceBusiness\obj\Debug\net5.0\BFinanceBusiness.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Brian\Desktop\BFinanceProject\BFinanceBackend\BFinanceBusiness\obj\Debug\net5.0\BFinanceBusiness.AssemblyInfoInputs.cache
+C:\Users\Brian\Desktop\BFinanceProject\BFinanceBackend\BFinanceBusiness\obj\Debug\net5.0\BFinanceBusiness.AssemblyInfo.cs
+C:\Users\Brian\Desktop\BFinanceProject\BFinanceBackend\BFinanceBusiness\obj\Debug\net5.0\BFinanceBusiness.csproj.CoreCompileInputs.cache
+C:\Users\Brian\Desktop\BFinanceProject\BFinanceBackend\BFinanceBusiness\obj\Debug\net5.0\BFinanceBusiness.csproj.CopyComplete
+C:\Users\Brian\Desktop\BFinanceProject\BFinanceBackend\BFinanceBusiness\obj\Debug\net5.0\BFinanceBusiness.dll
+C:\Users\Brian\Desktop\BFinanceProject\BFinanceBackend\BFinanceBusiness\obj\Debug\net5.0\ref\BFinanceBusiness.dll
+C:\Users\Brian\Desktop\BFinanceProject\BFinanceBackend\BFinanceBusiness\obj\Debug\net5.0\BFinanceBusiness.pdb
