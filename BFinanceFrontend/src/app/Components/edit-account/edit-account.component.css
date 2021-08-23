@@ -1,0 +1,68 @@
+input::placeholder {
+  color: black;
+}
+
+.inputInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.labels, .inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 2%;
+}
+
+.labels label, .inputs input, select {
+  margin-bottom: 5%;
+}
+
+.labels {
+  align-items: flex-end;
+}
+
+#account_info_form {
+  width: 25%;
+  height: 30%;
+  margin: auto auto 2% auto;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px gray;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+legend {
+  font-size: 1.5em;
+}
+
+#submit {
+  width: 75%;
+  height: 2em;
+  margin: auto;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.back {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.back button {
+  width: fit-content;
+  margin: 10px auto;
+  font-size: 1.5em;
+}
+

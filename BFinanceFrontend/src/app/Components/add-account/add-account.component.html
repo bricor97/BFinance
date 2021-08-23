@@ -1,0 +1,36 @@
+<form #account_info_form="ngForm"
+      (ngSubmit)="onSubmit();">
+  <fieldset class="infoFormFieldset">
+    <legend>Add account</legend>
+
+    <div class="inputInfo">
+      <div class="labels">
+        <label for="name">
+          Name:
+        </label>
+        <label for="bank">
+          Bank:
+        </label>
+        <label for="type">
+          Type:
+        </label>
+        <label for="number">
+          Number (last 4 digits):
+        </label>
+      </div>
+
+      <div class="inputs">
+        <input name="name" type="text" [(ngModel)]="name" autocomplete="off" required />
+        <input name="bank" type="text" [(ngModel)]="bank" required />
+        <select name="type" [(ngModel)]="type">
+          <option value="Credit">Credit</option>
+          <option value="Debit">Debit</option>
+        </select>
+        <input name="number" type="number" [(ngModel)]="number" required />
+      </div>
+    </div>
+
+    <button class="btn-10" id="submit" type="submit" value="Add account">Add account</button>
+  </fieldset>
+</form>
+<!-- REQUIRED IS NOT WORKING -->

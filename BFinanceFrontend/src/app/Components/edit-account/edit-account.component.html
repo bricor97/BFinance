@@ -1,0 +1,39 @@
+<form #account_info_form="ngForm"
+      (ngSubmit)="onSubmit();">
+  <fieldset id="account_info_form">
+    <legend>Edit account</legend>
+
+    <div class="inputInfo">
+      <div class="labels">
+        <label for="name">
+          Name:
+        </label>
+        <label for="bank">
+          Bank:
+        </label>
+        <label for="type">
+          Type:
+        </label>
+        <label for="number">
+          Number (last 4 digits):
+        </label>
+      </div>
+
+      <div class="inputs">
+        <input name="name" type="text" [(ngModel)]="this.name" autocomplete="off"
+               placeholder={{editAccount.accountName}} required />
+        <input name="bank" type="text" [(ngModel)]="this.bank"
+               placeholder={{editAccount.accountBank}} required />
+        <select name="type" [(ngModel)]="this.type" required>
+          <option value="" disabled selected hidden>{{editAccount.accountType}}</option>
+          <option value="Credit">Credit</option>
+          <option value="Debit">Debit</option>
+        </select>
+        <input name="number" type="number" [(ngModel)]="this.number"
+               placeholder={{editAccount.accountNumber}} required />
+      </div>
+    </div>
+
+    <input id="submit" type="submit" value="Update account" />
+  </fieldset>
+</form>

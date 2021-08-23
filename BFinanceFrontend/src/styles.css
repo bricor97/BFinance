@@ -1,0 +1,222 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  background-color: #fffada;
+}
+
+.inputInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  padding-top: 3%;
+}
+
+.infoFormFieldset {
+  width: 25%;
+  height: 30%;
+  margin: auto auto 2% auto;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px gray;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+/* DYNAMIC FORMS */
+.dynamicFormComponentContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.dynamicFormComponent {
+  position: absolute;
+  width: 100%;
+  background-color: #fff5b6;
+}
+
+/* TABLE */
+.tableContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  transition: transform .2s ease-in-out;
+}
+  .tableContainer table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 50%;
+    height: fit-content;
+  }
+  .tableContainer tr {
+    border: 1px solid black;
+  }
+  .tableContainer th {
+    font-size: 1.5em;
+  }
+  .tableContainer td {
+    padding: 1%;
+    font-size: 1.25em;
+    text-align: center;
+  }
+  .tableContainer caption {
+    margin-bottom: 5px;
+  }
+.tableSlideDown {
+  transition: transform .2s ease-in-out;
+  transform: translateY(250px);
+}
+
+/* TABLE PAGE INTERACT BUTTONS */
+.buttonsContainer {
+  display: flex;
+  justify-content: center;
+  margin: 5px 0 0 0;
+}
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 15%;
+}
+  .buttons button {
+    font-size: 1em;
+  }
+
+/* NOTIFICATION MESSAGE */
+.message-container {
+  display: flex;
+  justify-content: center;
+  width: 20%;
+  height: fit-content;
+  margin: 0 auto;
+}
+.message-div {
+  position: absolute;
+  margin-top: -2%;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 3px 2px 2px 0;
+  background-color: #4cc12b;
+}
+.message {
+  font-size: 1.2em;
+  padding: 1px 8px 1px 8px;
+  border: 1px solid black;
+  background-color: #ccffb7;
+  border-radius: 10px;
+}
+.checkmarkIcon {
+  padding: 10px 10px;
+}
+  .checkmarkIcon svg {
+    color: white;
+    transform: scale(1.4) translateY(1px);
+  }
+
+/* ICONS */
+.trashIcon, .editIcon, .openIcon {
+  border: none;
+  background-color: #fffada;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+  .trashIcon:hover, .editIcon:hover, .openIcon:hover {
+    transform: scale(1.2);
+  }
+.trashIcon {
+  color: red;
+}
+
+/* BUTTON STYLE: btn-2 */
+.btn-2 {
+  cursor: pointer;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: Marvel;
+  font-size: 20pt;
+  width: fit-content;
+  height: 30px;
+  position: relative;
+  border: solid #777 2px;
+  color: #777;
+  z-index: 1;
+  transition: all 0.5s ease-in-out;
+  border-radius: 5px;
+  background-image: -webkit-linear-gradient(30deg, transparent 50%, #592941 50%);
+  background-image: linear-gradient(30deg, transparent 50%, #592941 50%);
+  background-size: 298%;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 0%;
+}
+  .btn-2:hover {
+    background-position: 100%;
+    color: #f1f1f1;
+    border-color: #592941;
+  }
+.btn-2:active {
+  background-color: #00a7fc;
+  color: #333;
+  background-position: 0%;
+  border-color: #00a7fc;
+}
+.btn-2:focus {
+  outline: none
+}
+
+/* BUTTON STYLE: btn-10 */
+.btn-10 {
+  cursor: pointer;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: Marvel;
+  font-size: 20pt;
+  width: 200px;
+  height: 45px;
+  position: relative;
+  border: solid #777 2px;
+  color: #777;
+  z-index: 1;
+  transition: all 0.5s ease-in-out;
+  border-radius: 5px;
+  background: #498467;
+}
+.btn-10:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0%;
+  background-color: #fff;
+  transition: 0.5s ease-in-out;
+  z-index: -1;
+}
+.btn-10:hover:before {
+  width: 0%;
+  right: 50%;
+}
+.btn-10:hover {
+  color: #f1f1f1;
+  border-color: #498467;
+}
+.btn-10:active {
+  color: #333;
+  border-color: #498467;
+  background-color: #498467;
+}
+.btn-10:active:before {
+  background-color: #498467;
+}
+.btn-10:focus {
+  outline: none
+}

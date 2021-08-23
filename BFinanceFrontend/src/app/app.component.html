@@ -1,0 +1,19 @@
+<nav>
+  <span>B.Finance</span>
+  <ul>
+    <li><a routerLink="/Accounts">Accounts</a>
+    </li>
+    <li><a routerLink="/Expenses">Expenses</a>
+      <ul>
+        <li><a routerLink="/Expense/Bills">Bills</a></li>
+        <li><a routerLink="/Expense/Subscriptions">Subscriptions</a></li>
+        <li><a routerLink="/Expense/AutoTransfers">Automatic Transfers</a></li>
+      </ul>
+    </li>
+    <li><a routerLink="/Calendar">Calendar</a></li>
+  </ul>
+</nav>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>

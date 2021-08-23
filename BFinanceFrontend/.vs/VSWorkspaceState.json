@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\Components",
+    "\\src\\app\\Components\\add-account",
+    "\\src\\app\\Components\\see-accounts",
+    "\\src\\app\\Components\\see-expenses"
+  ],
+  "SelectedNode": "\\src\\app\\Components\\add-account\\add-account.component.css",
+  "PreviewInSolutionExplorer": false
+}
