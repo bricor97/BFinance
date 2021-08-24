@@ -8337,11 +8337,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceTests\\BFinanceTests.csproj",
+      "projectUniqueName": "E:\\BFinance\\BFinanceBackend\\BFinanceTests\\BFinanceTests.csproj",
       "projectName": "BFinanceTests",
-      "projectPath": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceTests\\BFinanceTests.csproj",
+      "projectPath": "E:\\BFinance\\BFinanceBackend\\BFinanceTests\\BFinanceTests.csproj",
       "packagesPath": "C:\\Users\\Brian\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceTests\\obj\\",
+      "outputPath": "E:\\BFinance\\BFinanceBackend\\BFinanceTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -8361,14 +8361,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceBusiness\\BFinanceBusiness.csproj": {
-              "projectPath": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceBusiness\\BFinanceBusiness.csproj"
+            "E:\\BFinance\\BFinanceBackend\\BFinanceBusiness\\BFinanceBusiness.csproj": {
+              "projectPath": "E:\\BFinance\\BFinanceBackend\\BFinanceBusiness\\BFinanceBusiness.csproj"
             },
-            "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceDbContext\\BFinanceDbContext.csproj": {
-              "projectPath": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceDbContext\\BFinanceDbContext.csproj"
+            "E:\\BFinance\\BFinanceBackend\\BFinanceDbContext\\BFinanceDbContext.csproj": {
+              "projectPath": "E:\\BFinance\\BFinanceBackend\\BFinanceDbContext\\BFinanceDbContext.csproj"
             },
-            "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceModels\\BFinanceModels.csproj": {
-              "projectPath": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceModels\\BFinanceModels.csproj"
+            "E:\\BFinance\\BFinanceBackend\\BFinanceModels\\BFinanceModels.csproj": {
+              "projectPath": "E:\\BFinance\\BFinanceBackend\\BFinanceModels\\BFinanceModels.csproj"
             }
           }
         }

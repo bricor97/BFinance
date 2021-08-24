@@ -10,3 +10,15 @@ C:\Users\Brian\Desktop\BFinanceProject\BFinanceBackend\BFinanceModels\obj\Debug\
 C:\Users\Brian\Desktop\BFinanceProject\BFinanceBackend\BFinanceModels\obj\Debug\net5.0\BFinanceModels.dll
 C:\Users\Brian\Desktop\BFinanceProject\BFinanceBackend\BFinanceModels\obj\Debug\net5.0\ref\BFinanceModels.dll
 C:\Users\Brian\Desktop\BFinanceProject\BFinanceBackend\BFinanceModels\obj\Debug\net5.0\BFinanceModels.pdb
+E:\BFinance\BFinanceBackend\BFinanceModels\bin\Debug\net5.0\BFinanceModels.deps.json
+E:\BFinance\BFinanceBackend\BFinanceModels\bin\Debug\net5.0\BFinanceModels.dll
+E:\BFinance\BFinanceBackend\BFinanceModels\bin\Debug\net5.0\ref\BFinanceModels.dll
+E:\BFinance\BFinanceBackend\BFinanceModels\bin\Debug\net5.0\BFinanceModels.pdb
+E:\BFinance\BFinanceBackend\BFinanceModels\obj\Debug\net5.0\BFinanceModels.csproj.AssemblyReference.cache
+E:\BFinance\BFinanceBackend\BFinanceModels\obj\Debug\net5.0\BFinanceModels.GeneratedMSBuildEditorConfig.editorconfig
+E:\BFinance\BFinanceBackend\BFinanceModels\obj\Debug\net5.0\BFinanceModels.AssemblyInfoInputs.cache
+E:\BFinance\BFinanceBackend\BFinanceModels\obj\Debug\net5.0\BFinanceModels.AssemblyInfo.cs
+E:\BFinance\BFinanceBackend\BFinanceModels\obj\Debug\net5.0\BFinanceModels.csproj.CoreCompileInputs.cache
+E:\BFinance\BFinanceBackend\BFinanceModels\obj\Debug\net5.0\BFinanceModels.dll
+E:\BFinance\BFinanceBackend\BFinanceModels\obj\Debug\net5.0\ref\BFinanceModels.dll
+E:\BFinance\BFinanceBackend\BFinanceModels\obj\Debug\net5.0\BFinanceModels.pdb

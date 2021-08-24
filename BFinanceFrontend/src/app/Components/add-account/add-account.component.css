@@ -1,3 +1,7 @@
+fieldset {
+  background-color: #fff5b6;
+}
+
 .labels, .inputs {
   display: flex;
   flex-direction: column;

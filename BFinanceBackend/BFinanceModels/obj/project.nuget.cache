@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cpL41jKF9xS+TcCBu6WcfM3EXaoUXX3FenPw+H0u8GU91HGSlsq24UbrcN+DC0N3O4yR3yJ6flZnQKlL7r7aRQ==",
+  "dgSpecHash": "38sNSJ3DdSE6RgwMKXrNU19zAm1kDlvDCm/YMOm3amCGG9hwq8qHouK7KZgirJ5Ld8d3LVUDwyglvyPnBifpYQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceModels\\BFinanceModels.csproj",
+  "projectFilePath": "E:\\BFinance\\BFinanceBackend\\BFinanceModels\\BFinanceModels.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

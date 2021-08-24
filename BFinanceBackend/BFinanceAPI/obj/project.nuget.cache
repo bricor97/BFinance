@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SRfN+TQLhKGhavoDAnoeZVHr8lS8KC/vp/N0ZnQosKgMM8LowFvQKlZVDSbG6uBEv/If9HLR3dYws1+lJGomOQ==",
+  "dgSpecHash": "w+rHk2z6LQ09UsmNBHgfVchMjVXlq2yxFen01A0shXS8dPG26pobwUPlYiHKEWpJ2K1v9vTrEwR3dT0Ql4JAcA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceAPI\\BFinanceAPI.csproj",
+  "projectFilePath": "E:\\BFinance\\BFinanceBackend\\BFinanceAPI\\BFinanceAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Brian\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Brian\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

@@ -18,6 +18,7 @@ import { EditAccountComponent } from './Components/edit-account/edit-account.com
 import { AddSubscriptionComponent } from './Components/add-subscription/add-subscription.component';
 import { AddAutoTransferComponent } from './Components/add-auto-transfer/add-auto-transfer.component';
 import { AddBillComponent } from './Components/add-bill/add-bill.component';
+import { UniDatePipePipe } from './uni-date-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AddBillComponent } from './Components/add-bill/add-bill.component';
     EditAccountComponent,
     AddSubscriptionComponent,
     AddAutoTransferComponent,
-    AddBillComponent
+    AddBillComponent,
+    UniDatePipePipe
   ],
   imports: [
     BrowserModule,

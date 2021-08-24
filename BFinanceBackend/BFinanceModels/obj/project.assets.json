@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceModels\\BFinanceModels.csproj",
+      "projectUniqueName": "E:\\BFinance\\BFinanceBackend\\BFinanceModels\\BFinanceModels.csproj",
       "projectName": "BFinanceModels",
-      "projectPath": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceModels\\BFinanceModels.csproj",
+      "projectPath": "E:\\BFinance\\BFinanceBackend\\BFinanceModels\\BFinanceModels.csproj",
       "packagesPath": "C:\\Users\\Brian\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceModels\\obj\\",
+      "outputPath": "E:\\BFinance\\BFinanceBackend\\BFinanceModels\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceAPI\\BFinanceAPI.csproj": {}
+    "E:\\BFinance\\BFinanceBackend\\BFinanceAPI\\BFinanceAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceAPI\\BFinanceAPI.csproj": {
+    "E:\\BFinance\\BFinanceBackend\\BFinanceAPI\\BFinanceAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceAPI\\BFinanceAPI.csproj",
+        "projectUniqueName": "E:\\BFinance\\BFinanceBackend\\BFinanceAPI\\BFinanceAPI.csproj",
         "projectName": "BFinanceAPI",
-        "projectPath": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceAPI\\BFinanceAPI.csproj",
+        "projectPath": "E:\\BFinance\\BFinanceBackend\\BFinanceAPI\\BFinanceAPI.csproj",
         "packagesPath": "C:\\Users\\Brian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceAPI\\obj\\",
+        "outputPath": "E:\\BFinance\\BFinanceBackend\\BFinanceAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -31,14 +31,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceBusiness\\BFinanceBusiness.csproj": {
-                "projectPath": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceBusiness\\BFinanceBusiness.csproj"
+              "E:\\BFinance\\BFinanceBackend\\BFinanceBusiness\\BFinanceBusiness.csproj": {
+                "projectPath": "E:\\BFinance\\BFinanceBackend\\BFinanceBusiness\\BFinanceBusiness.csproj"
               },
-              "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceDbContext\\BFinanceDbContext.csproj": {
-                "projectPath": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceDbContext\\BFinanceDbContext.csproj"
+              "E:\\BFinance\\BFinanceBackend\\BFinanceDbContext\\BFinanceDbContext.csproj": {
+                "projectPath": "E:\\BFinance\\BFinanceBackend\\BFinanceDbContext\\BFinanceDbContext.csproj"
               },
-              "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceModels\\BFinanceModels.csproj": {
-                "projectPath": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceModels\\BFinanceModels.csproj"
+              "E:\\BFinance\\BFinanceBackend\\BFinanceModels\\BFinanceModels.csproj": {
+                "projectPath": "E:\\BFinance\\BFinanceBackend\\BFinanceModels\\BFinanceModels.csproj"
               }
             }
           }
@@ -86,14 +86,14 @@
         }
       }
     },
-    "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceBusiness\\BFinanceBusiness.csproj": {
+    "E:\\BFinance\\BFinanceBackend\\BFinanceBusiness\\BFinanceBusiness.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceBusiness\\BFinanceBusiness.csproj",
+        "projectUniqueName": "E:\\BFinance\\BFinanceBackend\\BFinanceBusiness\\BFinanceBusiness.csproj",
         "projectName": "BFinanceBusiness",
-        "projectPath": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceBusiness\\BFinanceBusiness.csproj",
+        "projectPath": "E:\\BFinance\\BFinanceBackend\\BFinanceBusiness\\BFinanceBusiness.csproj",
         "packagesPath": "C:\\Users\\Brian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceBusiness\\obj\\",
+        "outputPath": "E:\\BFinance\\BFinanceBackend\\BFinanceBusiness\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -113,11 +113,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceDbContext\\BFinanceDbContext.csproj": {
-                "projectPath": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceDbContext\\BFinanceDbContext.csproj"
+              "E:\\BFinance\\BFinanceBackend\\BFinanceDbContext\\BFinanceDbContext.csproj": {
+                "projectPath": "E:\\BFinance\\BFinanceBackend\\BFinanceDbContext\\BFinanceDbContext.csproj"
               },
-              "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceModels\\BFinanceModels.csproj": {
-                "projectPath": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceModels\\BFinanceModels.csproj"
+              "E:\\BFinance\\BFinanceBackend\\BFinanceModels\\BFinanceModels.csproj": {
+                "projectPath": "E:\\BFinance\\BFinanceBackend\\BFinanceModels\\BFinanceModels.csproj"
               }
             }
           }
@@ -150,14 +150,14 @@
         }
       }
     },
-    "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceDbContext\\BFinanceDbContext.csproj": {
+    "E:\\BFinance\\BFinanceBackend\\BFinanceDbContext\\BFinanceDbContext.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceDbContext\\BFinanceDbContext.csproj",
+        "projectUniqueName": "E:\\BFinance\\BFinanceBackend\\BFinanceDbContext\\BFinanceDbContext.csproj",
         "projectName": "BFinanceDbContext",
-        "projectPath": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceDbContext\\BFinanceDbContext.csproj",
+        "projectPath": "E:\\BFinance\\BFinanceBackend\\BFinanceDbContext\\BFinanceDbContext.csproj",
         "packagesPath": "C:\\Users\\Brian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceDbContext\\obj\\",
+        "outputPath": "E:\\BFinance\\BFinanceBackend\\BFinanceDbContext\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -177,8 +177,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceModels\\BFinanceModels.csproj": {
-                "projectPath": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceModels\\BFinanceModels.csproj"
+              "E:\\BFinance\\BFinanceBackend\\BFinanceModels\\BFinanceModels.csproj": {
+                "projectPath": "E:\\BFinance\\BFinanceBackend\\BFinanceModels\\BFinanceModels.csproj"
               }
             }
           }
@@ -229,14 +229,14 @@
         }
       }
     },
-    "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceModels\\BFinanceModels.csproj": {
+    "E:\\BFinance\\BFinanceBackend\\BFinanceModels\\BFinanceModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceModels\\BFinanceModels.csproj",
+        "projectUniqueName": "E:\\BFinance\\BFinanceBackend\\BFinanceModels\\BFinanceModels.csproj",
         "projectName": "BFinanceModels",
-        "projectPath": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceModels\\BFinanceModels.csproj",
+        "projectPath": "E:\\BFinance\\BFinanceBackend\\BFinanceModels\\BFinanceModels.csproj",
         "packagesPath": "C:\\Users\\Brian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Brian\\Desktop\\BFinance\\BFinanceBackend\\BFinanceModels\\obj\\",
+        "outputPath": "E:\\BFinance\\BFinanceBackend\\BFinanceModels\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -1,33 +1,30 @@
-.main {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+.currentDate {
+  width: 50%;
+  margin: auto;
+  font-size: 1.5em;
 }
-.calendar {
+.date {
+  font-size: 1.5em;
+}
+.expenseCardsContainer {
+  width: 50%;
+  margin: 20px auto;
+}
+.expenseCards {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+.expenseCard {
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px gray;
+  padding: 5px;
+  margin-right: 10px;
+  min-width: 12%;
+}
+.expenseSection {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 60%;
-}
-.calendarDisplay {
-  display: flex;
-  flex-wrap: wrap;
-  transform: translateX(6px);
-}
-
-.calendarDay {
-  height: 150px;
-  width: 150px;
-  border: 1px solid black;
-  margin-right: -1px;
-  margin-bottom: -1px;
-  padding: 5px; 
-}
-
-.daysOfWeek {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  font-size: 1.25em;
+  margin: 30px 0 0 0;
 }
