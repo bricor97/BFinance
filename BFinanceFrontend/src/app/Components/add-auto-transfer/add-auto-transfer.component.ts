@@ -11,13 +11,13 @@ import { ExpenseService } from '../../Services/expense.service';
 })
 export class AddAutoTransferComponent implements OnInit {
 
-  name: string = '';
+  name: string          = '';
   amount?: number;
-  period: string = '';
-  dueMonth: string = '';
-  dueDay: string = '';
+  period: string        = '';
+  dueMonth: string      = '';
+  dueDay: string        = '';
   fromAccountId: number = 0;
-  toAccountId: number = 0;
+  toAccountId: number   = 0;
 
   accounts!: GetAccount[];
 
@@ -33,23 +33,22 @@ export class AddAutoTransferComponent implements OnInit {
 
   onSubmit(): void {
     let newAutoTransfer: PostAutoTransfer = {
-      transferName: this.name,
+      transferName:   this.name,
       transferAmount: this.amount!,
       transferPeriod: this.period,
-      transferDate: this.dueMonth == '' ? this.dueDay : this.dueMonth + '/' + this.dueDay,
-      fromAccountId: this.fromAccountId,
-      toAccountId: this.toAccountId
+      transferDate:   this.dueMonth == '' ? this.dueDay : this.dueMonth + '/' + this.dueDay,
+      fromAccountId:  this.fromAccountId,
+      toAccountId:    this.toAccountId
     }
-    this.name = '';
-    this.amount = undefined;
-    this.period = '';
-    this.dueMonth = '';
-    this.dueDay = '';
+    this.name          = '';
+    this.amount        = undefined;
+    this.period        = '';
+    this.dueMonth      = '';
+    this.dueDay        = '';
     this.fromAccountId = 0;
-    this.toAccountId = 0;
+    this.toAccountId   = 0;
     this._expenseService.addAutoTransfer(newAutoTransfer).subscribe(
       next => { }, error => { }, () => { this.formSubmit.emit("Automatic transfers successfully added"); }
     );
   }
-
 }

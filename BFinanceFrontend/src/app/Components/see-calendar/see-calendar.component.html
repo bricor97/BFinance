@@ -1,11 +1,13 @@
 <div class="main">
   <div class="currentDate">
-    <span>Today's date: {{todayDate | date: 'MMMM d, YYYY'}}</span>
+    <span>Today's date:
+      <span style="font-size: 1.2em">{{todayDate | date: 'MMMM d, YYYY'}}</span>
+    </span>
     <br />
     <span>Expenses for the month of
-      <strong>{{todayDate | date: 'MMMM'}}</strong>
-      - <span style="font-size: 1.2em">${{getThisMonthExpenseTotal() | number: '.2-2'}}</span>
-        <span style="font-size: 0.65em;"> (not including automatic transfers)</span>
+      <strong>{{todayDate | date: 'MMMM'}}</strong> -
+      <span style="font-size: 1.2em">${{getThisMonthExpenseTotal() | number: '.2-2'}}</span>
+      <span style="font-size: 0.65em;"> (not including automatic transfers)</span>
     </span>
   </div>
 
@@ -14,8 +16,9 @@
       <span style="font-weight: bold; font-size: 1.2em;">Subscriptions - <span style="font-size: 1.2em">${{getThisMonthSubscriptionTotal() | number: '.2-2'}}</span></span>
       <div class="expenseCards">
         <span *ngIf="thisMonthSubscriptions.length == 0">No subscriptions due this month</span>
-        <div class="expenseCard" *ngFor="let subscription of thisMonthSubscriptions.sort(compareSubs)">
-          <span class="date">{{subscription.paymentDueDate | uniDatePipe}}</span>
+        <div class="expenseCard" *ngFor="let subscription of thisMonthSubscriptions.sort(compareSubs)"
+             [ngClass]="getCardStyleClass(subscription.paymentDueDate)">
+          <span class="date">{{subscription.paymentDueDate | uniDate | ordinalNumber}}</span>
           <br />
           <span class="name">{{subscription.subscriptionName}}</span>
           <br />
@@ -28,8 +31,9 @@
       <span style="font-weight: bold; font-size: 1.2em;">Bills - <span style="font-size: 1.2em">${{getThisMonthBillTotal() | number: '.2-2'}}</span></span>
       <div class="expenseCards">
         <span *ngIf="thisMonthBills.length == 0">No bills due this month</span>
-        <div class="expenseCard" *ngFor="let bill of thisMonthBills.sort(compareBills)">
-          <span class="date" style="padding-left: 5px">{{bill.paymentDueDate | uniDatePipe}}</span>
+        <div class="expenseCard" *ngFor="let bill of thisMonthBills.sort(compareBills)"
+             [ngClass]="getCardStyleClass(bill.paymentDueDate)">
+          <span class="date" style="padding-left: 5px">{{bill.paymentDueDate | uniDate | ordinalNumber}}</span>
           <br />
           <span class="name">{{bill.billName}}</span>
           <br />
@@ -42,8 +46,9 @@
       <span style="font-weight: bold; font-size: 1.2em;">Automatic transfers - <span style="font-size: 1.2em">${{getThisMonthAutoTransferTotal() | number: '.2-2'}}</span></span>
       <div class="expenseCards">
         <span *ngIf="thisMonthAutoTransfers.length == 0">No automatic transfers triggering this month</span>
-        <div class="expenseCard" *ngFor="let autoTransfer of thisMonthAutoTransfers.sort(compareAutoTs)">
-          <span class="date" style="padding-left: 5px">{{autoTransfer.transferDate | uniDatePipe}}</span>
+        <div class="expenseCard" *ngFor="let autoTransfer of thisMonthAutoTransfers.sort(compareAutoTs)"
+             [ngClass]="getCardStyleClass(autoTransfer.transferDate)">
+          <span class="date" style="padding-left: 5px">{{autoTransfer.transferDate | uniDate | ordinalNumber}}</span>
           <br />
           <span class="name">{{autoTransfer.transferName}}</span>
           <br />

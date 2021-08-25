@@ -28,3 +28,10 @@
   flex-direction: column;
   margin: 30px 0 0 0;
 }
+
+.dueDateToday {
+  box-shadow: 5px 5px 5px #3d9e39;
+}
+.dueDateNotPassed {
+  box-shadow: 5px 5px 5px salmon;
+}

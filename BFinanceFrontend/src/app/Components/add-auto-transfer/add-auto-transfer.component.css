@@ -5,13 +5,10 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-content: center;
-  /*margin-bottom: 2%;*/
 }
-
 .labels {
   align-items: flex-end;
 }
-
   .labels label, .inputs input, select {
     margin-bottom: 5%;
   }

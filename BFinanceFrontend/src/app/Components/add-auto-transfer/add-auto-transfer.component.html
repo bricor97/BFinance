@@ -1,31 +1,16 @@
-<form #auto_transfer_info_form="ngForm"
-      (ngSubmit)="onSubmit();">
+<form #auto_transfer_info_form="ngForm" (ngSubmit)="onSubmit();">
   <fieldset class="infoFormFieldset">
     <legend>Add automatic transfer</legend>
 
     <div class="inputInfo">
       <div class="labels">
-        <label for="name">
-          Name:
-        </label>
-        <label for="amount">
-          Amount:
-        </label>
-        <label for="period">
-          Period:
-        </label>
-        <label for="due-month" *ngIf="period == 'Yearly'">
-          Due month:
-        </label>
-        <label for="due-day">
-          Due day:
-        </label>
-        <label for="from-account">
-          Source account:
-        </label>
-        <label for="to-account">
-          Target account:
-        </label>
+        <label for="name">Name:</label>
+        <label for="amount">Amount:</label>
+        <label for="period">Period:</label>
+        <label for="due-month" *ngIf="period == 'Yearly'">Due month:</label>
+        <label for="due-day">Due day:</label>
+        <label for="from-account">Source account:</label>
+        <label for="to-account">Target account:</label>
       </div>
 
       <div class="inputs">
@@ -53,10 +38,7 @@
           <option value="12">December</option>
         </select>
         <select name="due-day" [(ngModel)]="dueDay">
-          <option value="{{day + 1}}" *ngFor="let item of [].constructor(31); let day = index"
-                  [attr.data-index]="day">
-            {{day + 1}}
-          </option>
+          <option value="{{day + 1}}" *ngFor="let item of [].constructor(31); let day = index" [attr.data-index]="day">{{day + 1}}</option>
         </select>
         <select name="from-account" [(ngModel)]="fromAccountId">
           <option *ngFor="let account of accounts" value="{{account.accountId}}">{{account.accountNumber}} - {{account.accountName}}</option>

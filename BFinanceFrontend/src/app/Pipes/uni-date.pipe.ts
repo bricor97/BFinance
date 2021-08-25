@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'uniDatePipe'
+  name: 'uniDate'
 })
-export class UniDatePipePipe implements PipeTransform {
+export class UniDatePipe implements PipeTransform {
 
   transform(value: string): string {
     if (value.split('/').length == 2)

@@ -2,6 +2,7 @@ import { Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@ang
 import { AccountService } from '../../Services/account.service';
 import { GetAccount, PostAccount } from '../../Models/account';
 import { FadeIn, FadeOut, ScaleDown, ScaleUp, SlideOutLeft } from '../../Animation';
+import { SortByBankPipe } from '../../Pipes/sort-by-bank.pipe';
 
 @Component({
   selector: 'app-see-accounts',
@@ -12,15 +13,16 @@ import { FadeIn, FadeOut, ScaleDown, ScaleUp, SlideOutLeft } from '../../Animati
 export class SeeAccountsComponent implements OnInit {
 
   accounts?: GetAccount[];
-  addAcctDisplay: boolean = false;
+  addAcctDisplay: boolean     = false;
   //editAcctDisplay: boolean = false;
   //editAccount?: GetAccount;
-  message: string = "";
+  message: string             = "";
   MESSAGE_DURATION_MS: number = 4000;
 
   @ViewChild('account_table') accountTable!: ElementRef;
 
-  constructor(private _accountService: AccountService, private _renderer: Renderer2) { }
+  constructor(private _accountService: AccountService, private _renderer: Renderer2,
+    private _sortByBankPipe: SortByBankPipe) { }
 
   ngOnInit(): void {
     this.getAllAccounts();
@@ -28,7 +30,7 @@ export class SeeAccountsComponent implements OnInit {
 
   getAllAccounts(): void {
     this._accountService.getAllAcounts().subscribe(
-      accounts => this.accounts = accounts
+      accounts => this.accounts = this._sortByBankPipe.transform(accounts)
     );
   }
 

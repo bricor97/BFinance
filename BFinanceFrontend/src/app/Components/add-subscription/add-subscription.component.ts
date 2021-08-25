@@ -11,11 +11,11 @@ import { ExpenseService } from '../../Services/expense.service';
 })
 export class AddSubscriptionComponent implements OnInit {
 
-  name: string = '';
+  name: string          = '';
   amount?: number;
-  period: string = '';
-  dueMonth: string = '';
-  dueDay: string = '';
+  period: string        = '';
+  dueMonth: string      = '';
+  dueDay: string        = '';
   fromAccountId: number = 0;
 
   accounts!: GetAccount[];
@@ -33,16 +33,16 @@ export class AddSubscriptionComponent implements OnInit {
   onSubmit(): void {
     let newSubscription: PostSubscription = {
       subscriptionName: this.name,
-      paymentAmount: this.amount!,
-      paymentPeriod: this.period,
-      paymentDueDate: this.dueMonth == '' ? this.dueDay : this.dueMonth + '/' + this.dueDay,
-      fromAccountId: this.fromAccountId
+      paymentAmount:    this.amount!,
+      paymentPeriod:    this.period,
+      paymentDueDate:   this.dueMonth == '' ? this.dueDay : this.dueMonth + '/' + this.dueDay,
+      fromAccountId:    this.fromAccountId
     }
-    this.name = '';
-    this.amount = undefined;
-    this.period = '';
-    this.dueMonth = '';
-    this.dueDay = '';
+    this.name          = '';
+    this.amount        = undefined;
+    this.period        = '';
+    this.dueMonth      = '';
+    this.dueDay        = '';
     this.fromAccountId = 0;
     this._expenseService.addSubscription(newSubscription).subscribe(
       next => { }, error => { }, () => { this.formSubmit.emit("Subscription successfully added"); }

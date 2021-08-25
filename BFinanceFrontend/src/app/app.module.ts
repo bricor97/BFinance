@@ -18,7 +18,11 @@ import { EditAccountComponent } from './Components/edit-account/edit-account.com
 import { AddSubscriptionComponent } from './Components/add-subscription/add-subscription.component';
 import { AddAutoTransferComponent } from './Components/add-auto-transfer/add-auto-transfer.component';
 import { AddBillComponent } from './Components/add-bill/add-bill.component';
-import { UniDatePipePipe } from './uni-date-pipe.pipe';
+import { UniDatePipe } from './Pipes/uni-date.pipe';
+import { OrdinalNumberPipe } from './Pipes/ordinal-number.pipe';
+import { SortByBankPipe } from './Pipes/sort-by-bank.pipe';
+import { SortByAccountPipe } from './Pipes/sort-by-account.pipe';
+import { SeeToolsComponent } from './Components/see-tools/see-tools.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,11 @@ import { UniDatePipePipe } from './uni-date-pipe.pipe';
     AddSubscriptionComponent,
     AddAutoTransferComponent,
     AddBillComponent,
-    UniDatePipePipe
+    UniDatePipe,
+    OrdinalNumberPipe,
+    SortByBankPipe,
+    SortByAccountPipe,
+    SeeToolsComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +51,7 @@ import { UniDatePipePipe } from './uni-date-pipe.pipe';
     HttpClientModule,
     FormsModule, ReactiveFormsModule
   ],
-  providers: [],
+  providers: [UniDatePipe, OrdinalNumberPipe, SortByBankPipe, SortByAccountPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

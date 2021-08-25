@@ -6,6 +6,7 @@ import { ExpenseService } from '../../Services/expense.service';
 import { GetAccount } from '../../Models/account';
 import { AccountService } from '../../Services/account.service';
 import { FadeIn, FadeOut, ScaleDown, ScaleUp, SlideOutLeft } from '../../Animation';
+import { SortByAccountPipe } from '../../Pipes/sort-by-account.pipe';
 
 @Component({
   selector: 'app-see-expenses',
@@ -46,7 +47,7 @@ export class SeeExpensesComponent implements OnInit {
   @ViewChild('auto_transfer_table') autoTransferTable!: ElementRef;
 
   constructor(private _expenseService: ExpenseService, private _accountService: AccountService,
-    private _renderer: Renderer2) { }
+    private _renderer: Renderer2, private _sortByAccount: SortByAccountPipe) { }
 
   ngOnInit(): void {
     this.getAllSubscriptions();
@@ -250,19 +251,19 @@ export class SeeExpensesComponent implements OnInit {
 
   getAllSubscriptions(): void {
     this._expenseService.getAllSubscriptions().subscribe(
-      subscriptions => this.subscriptions = subscriptions
+      subscriptions => this.subscriptions = this._sortByAccount.transform(subscriptions)
     );
   }
 
   getAllBills(): void {
     this._expenseService.getAllBills().subscribe(
-      bills => this.bills = bills
+      bills => this.bills = this._sortByAccount.transform(bills)
     );
   }
 
   getAllAutoTransfers(): void {
     this._expenseService.getAllAutoTransfers().subscribe(
-      autoTransfers => this.autoTransfers = autoTransfers
+      autoTransfers => this.autoTransfers = this._sortByAccount.transform(autoTransfers)
     );
   }
 }

@@ -4,6 +4,8 @@ import { GetBill } from '../../Models/bill';
 import { GetSubscription } from '../../Models/subscription';
 import { AccountService } from '../../Services/account.service';
 import { ExpenseService } from '../../Services/expense.service';
+import { UniDatePipe } from '../../Pipes/uni-date.pipe';
+import { OrdinalNumberPipe } from '../../Pipes/ordinal-number.pipe';
 
 @Component({
   selector: 'app-see-calendar',
@@ -14,13 +16,14 @@ export class SeeCalendarComponent implements OnInit {
 
   todayDate = new Date();
   subscriptions?: GetSubscription[];
-  thisMonthSubscriptions: GetSubscription[] = [];
   bills?: GetBill[];
-  thisMonthBills: GetBill[] = [];
   autoTransfers?: GetAutoTransfer[];
+  thisMonthSubscriptions: GetSubscription[] = [];
+  thisMonthBills: GetBill[]                 = [];
   thisMonthAutoTransfers: GetAutoTransfer[] = [];
 
-  constructor(private _expenseService: ExpenseService, private _accountService: AccountService) { }
+  constructor(private _expenseService: ExpenseService, private _accountService: AccountService,
+    private _uniDatePipe: UniDatePipe) { }
 
   ngOnInit() {
     this.getAllSubscriptions();
@@ -35,13 +38,26 @@ export class SeeCalendarComponent implements OnInit {
     return (dueDate.split('/').length == 2);
   }
   isThisMonth(dueDate: string): boolean {
-    if (!this.isMonthAndDay(dueDate)) {
+    if (!this.isMonthAndDay(dueDate))
       return true;
-    }
-    else if (parseInt(dueDate.split('/')[0]) - 1 == parseInt(this.thisMonth())) {
+    else if (parseInt(dueDate.split('/')[0]) - 1 == parseInt(this.thisMonth()))
       return true;
-    }
     return false;
+  }
+  isTodayDueDate(dueDate: string): boolean {
+    let today = this.todayDate.getDate();
+    let dueDay = parseInt(this._uniDatePipe.transform(dueDate));
+    return dueDay == today;
+  }
+  hasDueDatePassed(dueDate: string): boolean {
+    let today = this.todayDate.getDate();
+    let dueDay = parseInt(this._uniDatePipe.transform(dueDate));
+    return dueDay < today;
+  }
+  getCardStyleClass(dueDate: string): string {
+    if (this.isTodayDueDate(dueDate)) return 'dueDateToday';
+    else if (!this.hasDueDatePassed(dueDate)) return 'dueDateNotPassed';
+    else return '';
   }
 
   compareBills(bill1: GetBill, bill2: GetBill): number {
@@ -70,7 +86,6 @@ export class SeeCalendarComponent implements OnInit {
     return this.getThisMonthSubscriptionTotal() + this.getThisMonthBillTotal();
   }
 
-
   getAllSubscriptions(): void {
     this._expenseService.getAllSubscriptions().subscribe(
       subscriptions => {
@@ -80,20 +95,15 @@ export class SeeCalendarComponent implements OnInit {
     );
   }
   getThisMonthSubscriptions(): void {
-    if (this.subscriptions) {
-      for (var i = 0; i < this.subscriptions.length; i++) {
-        //console.log(this.isThisMonth(this.subscriptions[i].paymentDueDate));
-        if (this.isThisMonth(this.subscriptions[i].paymentDueDate)) {
+    if (this.subscriptions) 
+      for (var i = 0; i < this.subscriptions.length; i++) 
+        if (this.isThisMonth(this.subscriptions[i].paymentDueDate)) 
           this.thisMonthSubscriptions?.push(this.subscriptions[i]);
-        }
-      }
-    }
   }
   getThisMonthSubscriptionTotal(): number {
     let monthTotal = 0;
-    for (let i = 0; i < this.thisMonthSubscriptions.length; i++) {
+    for (let i = 0; i < this.thisMonthSubscriptions.length; i++)
       monthTotal += this.thisMonthSubscriptions[i].paymentAmount;
-    }
     return monthTotal;
   }
 
@@ -106,19 +116,15 @@ export class SeeCalendarComponent implements OnInit {
     );
   }
   getThisMonthBills(): void {
-    if (this.bills) {
-      for (var i = 0; i < this.bills.length; i++) {
-        if (this.isThisMonth(this.bills[i].paymentDueDate)) {
+    if (this.bills) 
+      for (var i = 0; i < this.bills.length; i++) 
+        if (this.isThisMonth(this.bills[i].paymentDueDate)) 
           this.thisMonthBills?.push(this.bills[i]);
-        }
-      }
-    }
   }
   getThisMonthBillTotal(): number {
     let monthTotal = 0;
-    for (let i = 0; i < this.thisMonthBills.length; i++) {
+    for (let i = 0; i < this.thisMonthBills.length; i++) 
       monthTotal += this.thisMonthBills[i].paymentAmount;
-    }
     return monthTotal;
   }
 
@@ -131,19 +137,15 @@ export class SeeCalendarComponent implements OnInit {
     );
   }
   getThisMonthAutoTransfers(): void {
-    if (this.autoTransfers) {
-      for (var i = 0; i < this.autoTransfers.length; i++) {
-        if (this.isThisMonth(this.autoTransfers[i].transferDate)) {
+    if (this.autoTransfers)
+      for (var i = 0; i < this.autoTransfers.length; i++)
+        if (this.isThisMonth(this.autoTransfers[i].transferDate))
           this.thisMonthAutoTransfers?.push(this.autoTransfers[i]);
-        }
-      }
-    }
   }
   getThisMonthAutoTransferTotal(): number {
     let monthTotal = 0;
-    for (let i = 0; i < this.thisMonthAutoTransfers.length; i++) {
+    for (let i = 0; i < this.thisMonthAutoTransfers.length; i++)
       monthTotal += this.thisMonthAutoTransfers[i].transferAmount;
-    }
     return monthTotal;
   }
 }

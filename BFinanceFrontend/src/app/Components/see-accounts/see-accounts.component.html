@@ -3,7 +3,7 @@
 <div class="main">
 
   <div class="message-container">
-    <div *ngIf="this.message != ''" class="message-div" @fadeIn @fadeOut>
+    <div *ngIf="message != ''" class="message-div" @fadeIn @fadeOut>
       <span class="checkmarkIcon">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
           <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -16,15 +16,9 @@
 
   <div class="buttonsContainer">
     <div class="buttons">
-      <button *ngIf="!this.addAcctDisplay" (click)="toggleAddAccount(true)" class="tr-bl-sweep-btn">
-        Add account
-      </button>
-      <button *ngIf="this.addAcctDisplay" (click)="toggleAddAccount(true)" class="tr-bl-sweep-btn">
-        Cancel
-      </button>
-      <!--<button *ngIf="this.editAcctDisplay" (click)="toggleEditAccount()">
-        Cancel
-      </button>-->
+      <button *ngIf="!addAcctDisplay" (click)="toggleAddAccount(true)" class="tr-bl-sweep-btn">Add account</button>
+      <button *ngIf="addAcctDisplay" (click)="toggleAddAccount(true)" class="tr-bl-sweep-btn">Cancel</button>
+      <!--<button *ngIf="this.editAcctDisplay" (click)="toggleEditAccount()">Cancel</button>-->
     </div>
   </div>
 
