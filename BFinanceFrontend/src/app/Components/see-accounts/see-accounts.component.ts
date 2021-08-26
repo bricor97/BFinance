@@ -18,6 +18,8 @@ export class SeeAccountsComponent implements OnInit {
   //editAccount?: GetAccount;
   message: string             = "";
   MESSAGE_DURATION_MS: number = 4000;
+  accountSort: string[] = ['bank', 'name', 'type', 'number'];
+  selectedSort: string = this.accountSort[0];
 
   @ViewChild('account_table') accountTable!: ElementRef;
 

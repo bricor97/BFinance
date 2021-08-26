@@ -3,8 +3,11 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\Components"
+    "\\src\\app\\Components",
+    "\\src\\app\\Components\\add-account",
+    "\\src\\app\\Components\\see-accounts",
+    "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\app\\uni-date-pipe.pipe.ts",
+  "SelectedNode": "\\src\\assets",
   "PreviewInSolutionExplorer": false
 }

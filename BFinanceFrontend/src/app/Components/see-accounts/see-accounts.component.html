@@ -19,6 +19,10 @@
       <button *ngIf="!addAcctDisplay" (click)="toggleAddAccount(true)" class="tr-bl-sweep-btn">Add account</button>
       <button *ngIf="addAcctDisplay" (click)="toggleAddAccount(true)" class="tr-bl-sweep-btn">Cancel</button>
       <!--<button *ngIf="this.editAcctDisplay" (click)="toggleEditAccount()">Cancel</button>-->
+      <select name="sortDropdown" [(ngModel)]="selectedSort" id="sortAcctDpdwn">
+        <option value="{{selectedSort}}" disabled selected hidden>{{selectedSort | titlecase}}</option>
+        <option *ngFor="let sortColumn of accountSort" value="{{sortColumn}}">{{sortColumn | titlecase}}</option>
+      </select>
     </div>
   </div>
 
