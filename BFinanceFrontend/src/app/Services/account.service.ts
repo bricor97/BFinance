@@ -17,7 +17,7 @@ export class AccountService {
 
   constructor(private url: ApiUrlService, private http: HttpClient) { }
 
-  getAllAcounts(): Observable<GetAccount[]> {
+  getAllAccounts(): Observable<GetAccount[]> {
     return this.http.get<GetAccount[]>(`${this.url.getUrl()}Account/GetAllAccounts`);
   }
 

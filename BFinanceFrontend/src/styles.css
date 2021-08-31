@@ -71,7 +71,7 @@ body {
         transform: translate(-1px, -1px);
       }
       .main-nav .main-nav-bar .main-nav-option:active {
-        transition: background-color .02s linear, box-shadow .05s linear, transform .02s linear;
+        transition: background-color .01s linear, box-shadow .01s linear, transform .01s linear;
         background-color: #9ac18f;
         border-radius: 10px;
         box-shadow: 1px 1px 3px inset black;
@@ -135,13 +135,14 @@ body {
 
 /* DYNAMIC FORMS */
 .dynamicFormComponentContainer {
+  position: absolute;
   display: flex;
   width: 100%;
   justify-content: center;
   margin-bottom: 20px;
 }
 .dynamicFormComponent {
-  position: absolute;
+  /*position: absolute;*/
   width: 100%;
 }
 
@@ -170,15 +171,12 @@ body {
     background: #592941; 
   }
   .tableContainer td {
-    padding: 1%;
+    padding: 5px;
+    margin: 0;
     font-size: 1.25em;
     text-align: center;
   }
   .tableContainer caption { margin-bottom: 5px; }
-.tableSlideDown {
-  transition: transform .2s ease-in-out;
-  transform: translateY(250px);
-}
 
 /* TABLE PAGE INTERACT BUTTONS */
 .buttonsContainer {
@@ -189,7 +187,7 @@ body {
 .buttons {
   display: flex;
   justify-content: space-evenly;
-  width: 15%;
+  width: 100%;
 }
   .buttons button { font-size: 1em; }
 
@@ -223,92 +221,70 @@ body {
   }
 
 /* ICONS */
-.trashIcon, .editIcon, .openIcon {
+.trashIcon, .editIcon, .openIcon, .addIcon {
   border: none;
   background-color: #fffada;
   cursor: pointer;
   transform: scale(1.1);
 }
-  .trashIcon:hover, .editIcon:hover, .openIcon:hover { transform: scale(1.2); }
+  .trashIcon:hover, .editIcon:hover, .openIcon:hover, .addIcon:hover { transform: scale(1.2); }
 .trashIcon { color: red; }
+.addIcon { color: green; }
 
-/* BUTTON STYLE: btn-2 */
-.tr-bl-sweep-btn {
-  cursor: pointer;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-family: Marvel;
-  font-size: 20pt;
-  font-weight: bold;
-  width: fit-content;
+/* SORT DROPDOWN */
+.sortDpdwn {
   height: 30px;
-  position: relative;
-  border: solid #777 2px;
-  color: #777;
-  z-index: 1;
-  transition: all 0.3s ease-in-out;
-  border-radius: 5px;
-  background-image: -webkit-linear-gradient(30deg, transparent 50%, #592941 50%);
-  background-image: linear-gradient(30deg, transparent 50%, #592941 50%);
-  background-size: 298%;
+  padding: 0 5px;
   background-color: transparent;
-  background-repeat: no-repeat;
-  background-position: 0%;
+  border: solid #777 2px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  color: #777;
 }
-  .tr-bl-sweep-btn:hover {
-    background-position: 100%;
-    color: #f1f1f1;
-    border-color: #592941;
-  }
-  .tr-bl-sweep-btn:active {
-    background-color: #00a7fc;
-    color: #333;
-    background-position: 0%;
-    border-color: #00a7fc;
-  }
-  .tr-bl-sweep-btn:focus { outline: none }
 
-/* BUTTON STYLE: btn-10 */
-.out-in-sweep-btn {
+/* MIDDLE TO EDGE SWIPE BUTTON */
+.mid-edge-sweep-btn {
   cursor: pointer;
   letter-spacing: 2px;
   text-transform: uppercase;
   font-family: Marvel;
-  font-size: 20pt;
-  font-weight: bold;
-  width: 200px;
-  height: 45px;
   position: relative;
+  width: fit-content;
   border: solid #777 2px;
-  color: #777;
-  z-index: 1;
-  transition: all 0.5s ease-in-out;
+  color: black;
+  font-weight: bold;
+  transition: all 0.3s linear;
   border-radius: 5px;
-  background: #498467;
+  background: transparent;
+  z-index: 1;
 }
-  .out-in-sweep-btn:before {
+  .mid-edge-sweep-btn:before {
     content: "";
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
-    right: 0%;
-    background-color: #fff;
+    left: 0;
+    background: #592941;
+    transform: scale(0);
     transition: 0.3s ease-in-out;
     z-index: -1;
   }
-  .out-in-sweep-btn:hover:before {
-    width: 0%;
-    right: 50%;
+  .mid-edge-sweep-btn:hover:before {
+    transform: scale(1);
   }
-  .out-in-sweep-btn:hover {
-    color: #f1f1f1;
-    border-color: #498467;
+  .mid-edge-sweep-btn:hover {
+    color: white;
+    border-color: #592941;
   }
-  .out-in-sweep-btn:active {
+  .mid-edge-sweep-btn:active:before {
+    background-color: #87b679;
+  }
+  .mid-edge-sweep-btn:active {
+    border-color: #87b679;
     color: #333;
-    border-color: #498467;
-    background-color: #498467;
+    background-color: #87b679;
   }
-    .out-in-sweep-btn:active:before { background-color: #498467; }
-  .out-in-sweep-btn:focus { outline: none }
+  .mid-edge-sweep-btn:focus {
+    outline: none
+  }

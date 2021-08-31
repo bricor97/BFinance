@@ -26,7 +26,7 @@ export class AddAutoTransferComponent implements OnInit {
   constructor(private _expenseService: ExpenseService, private _accountService: AccountService) { }
 
   ngOnInit(): void {
-    this._accountService.getAllAcounts().subscribe(
+    this._accountService.getAllAccounts().subscribe(
       accounts => this.accounts = accounts
     );
   }

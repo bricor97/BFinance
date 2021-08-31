@@ -23,6 +23,8 @@ import { OrdinalNumberPipe } from './Pipes/ordinal-number.pipe';
 import { SortByBankPipe } from './Pipes/sort-by-bank.pipe';
 import { SortByAccountPipe } from './Pipes/sort-by-account.pipe';
 import { SeeToolsComponent } from './Components/see-tools/see-tools.component';
+import { SeeOverviewComponent } from './Components/see-overview/see-overview.component';
+import { SeeBudgetComponent } from './Components/see-budget/see-budget.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { SeeToolsComponent } from './Components/see-tools/see-tools.component';
     OrdinalNumberPipe,
     SortByBankPipe,
     SortByAccountPipe,
-    SeeToolsComponent
+    SeeToolsComponent,
+    SeeOverviewComponent,
+    SeeBudgetComponent
   ],
   imports: [
     BrowserModule,

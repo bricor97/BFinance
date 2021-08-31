@@ -4,10 +4,8 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\Components",
-    "\\src\\app\\Components\\add-account",
-    "\\src\\app\\Components\\see-accounts",
-    "\\src\\assets"
+    "\\src\\app\\Components\\see-accounts"
   ],
-  "SelectedNode": "\\src\\assets",
+  "SelectedNode": "\\src\\app\\Components\\see-accounts\\see-accounts.component.css",
   "PreviewInSolutionExplorer": false
 }

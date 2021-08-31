@@ -30,13 +30,15 @@ export class SeeExpensesComponent implements OnInit {
   //editBill?: GetBill;
   //editAutoTransfer?: GetAutoTransfer;
 
-  addSubscriptionDisplay: boolean = false;
-  addBillDisplay: boolean = false;
-  addAutoTransferDisplay: boolean = false;
-
-  //editSubscriptionDisplay: boolean = false;
-  //editBillDisplay: boolean = false;
-  //editAutoTransferDisplay: boolean = false;
+  subBillSort: string[] = [
+    'name', 'amount', 'period', 'date', 'source account'
+    ];
+  autoTSort: string[] = [
+    'name', 'amount', 'period', 'date', 'source account', 'target account'
+    ];
+  selectedSubSort: string = this.subBillSort[4];
+  selectedBillSort: string = this.subBillSort[4];
+  selectedAutoTSort: string = this.autoTSort[4];
 
   @ViewChild('autoTransferSection') autoTransferSection!: ElementRef;
   @ViewChild('subscriptionSection') subscriptionSection!: ElementRef;
@@ -61,7 +63,7 @@ export class SeeExpensesComponent implements OnInit {
   }
 
   getAllAccounts(): void {
-    this._accountService.getAllAcounts().subscribe(
+    this._accountService.getAllAccounts().subscribe(
       accounts => this.accounts = accounts
     );
   }
@@ -74,20 +76,123 @@ export class SeeExpensesComponent implements OnInit {
     return { accountId: 0, accountType: '', accountName: '', accountBank: '', accountNumber: '' };
   }
 
+  sortSubscriptions(sortCriteria: string): void {
+    if (sortCriteria == 'amount') {
+      this.subscriptions = this.subscriptions!.sort((sub1, sub2) => {
+        if (sub1.paymentAmount < sub2.paymentAmount) return -1;
+        else if (sub1.paymentAmount > sub2.paymentAmount) return 1;
+        return 0;
+      });
+    } else if (sortCriteria == 'name') {
+      this.subscriptions = this.subscriptions!.sort((sub1, sub2) => {
+        if (sub1.subscriptionName < sub2.subscriptionName) return -1;
+        else if (sub1.subscriptionName > sub2.subscriptionName) return 1;
+        return 0;
+      });
+    } else if (sortCriteria == 'period') {
+      this.subscriptions = this.subscriptions!.sort((sub1, sub2) => {
+        if (sub1.paymentPeriod < sub2.paymentPeriod) return -1;
+        else if (sub1.paymentPeriod > sub2.paymentPeriod) return 1;
+        return 0;
+      });
+    } else if (sortCriteria == 'date') {
+      this.subscriptions = this.subscriptions!.sort((sub1, sub2) => {
+        if (sub1.paymentDueDate < sub2.paymentDueDate) return -1;
+        else if (sub1.paymentDueDate > sub2.paymentDueDate) return 1;
+        return 0;
+      });
+    } else if (sortCriteria == 'src_acct') {
+      this.subscriptions = this.subscriptions!.sort((sub1, sub2) => {
+        if (sub1.fromAccountId < sub2.fromAccountId) return -1;
+        else if (sub1.fromAccountId > sub2.fromAccountId) return 1;
+        return 0;
+      });
+    }
+  }
+  sortBills(sortCriteria: string): void {
+    if (sortCriteria == 'amount') {
+      this.bills = this.bills!.sort((bill1, bill2) => {
+        if (bill1.paymentAmount < bill2.paymentAmount) return -1;
+        else if (bill1.paymentAmount > bill2.paymentAmount) return 1;
+        return 0;
+      });
+    } else if (sortCriteria == 'name') {
+      this.bills = this.bills!.sort((bill1, bill2) => {
+        if (bill1.billName < bill2.billName) return -1;
+        else if (bill1.billName > bill2.billName) return 1;
+        return 0;
+      });
+    } else if (sortCriteria == 'period') {
+      this.bills = this.bills!.sort((bill1, bill2) => {
+        if (bill1.paymentPeriod < bill2.paymentPeriod) return -1;
+        else if (bill1.paymentPeriod > bill2.paymentPeriod) return 1;
+        return 0;
+      });
+    } else if (sortCriteria == 'date') {
+      this.bills = this.bills!.sort((bill1, bill2) => {
+        if (parseInt(bill1.paymentDueDate) < parseInt(bill2.paymentDueDate)) return -1;
+        else if (parseInt(bill1.paymentDueDate) > parseInt(bill2.paymentDueDate)) return 1;
+        return 0;
+      });
+    } else if (sortCriteria == 'src_acct') {
+      this.bills = this.bills!.sort((bill1, bill2) => {
+        if (bill1.fromAccountId < bill2.fromAccountId) return -1;
+        else if (bill1.fromAccountId > bill2.fromAccountId) return 1;
+        return 0;
+      });
+    }
+  }
+  sortAutoTransfers(sortCriteria: string): void {
+    if (sortCriteria == 'amount') {
+      this.autoTransfers = this.autoTransfers!.sort((autoT1, autoT2) => {
+        if (autoT1.transferAmount < autoT2.transferAmount) return -1;
+        else if (autoT1.transferAmount > autoT2.transferAmount) return 1;
+        return 0;
+      });
+    } else if (sortCriteria == 'name') {
+      this.autoTransfers = this.autoTransfers!.sort((autoT1, autoT2) => {
+        if (autoT1.transferName < autoT2.transferName) return -1;
+        else if (autoT1.transferName > autoT2.transferName) return 1;
+        return 0;
+      });
+    } else if (sortCriteria == 'period') {
+      this.autoTransfers = this.autoTransfers!.sort((autoT1, autoT2) => {
+        if (autoT1.transferPeriod < autoT2.transferPeriod) return -1;
+        else if (autoT1.transferPeriod > autoT2.transferPeriod) return 1;
+        return 0;
+      });
+    } else if (sortCriteria == 'date') {
+      this.autoTransfers = this.autoTransfers!.sort((autoT1, autoT2) => {
+        if (parseInt(autoT1.transferDate) < parseInt(autoT2.transferDate)) return -1;
+        else if (parseInt(autoT1.transferDate) > parseInt(autoT2.transferDate)) return 1;
+        return 0;
+      });
+    } else if (sortCriteria == 'src_acct') {
+      this.autoTransfers = this.autoTransfers!.sort((autoT1, autoT2) => {
+        if (autoT1.fromAccountId < autoT2.fromAccountId) return -1;
+        else if (autoT1.fromAccountId > autoT2.fromAccountId) return 1;
+        return 0;
+      });
+    } else if (sortCriteria == 'tgt_acct') {
+      this.autoTransfers = this.autoTransfers!.sort((autoT1, autoT2) => {
+        if (autoT1.toAccountId < autoT2.toAccountId) return -1;
+        else if (autoT1.toAccountId > autoT2.toAccountId) return 1;
+        return 0;
+      });
+    }
+  }
+
   addSubscriptionSubmitEventHandler(data: any): void {
-    this.toggleAddSubscription(true);
     this.getAllSubscriptions();
     this.subscriptionMessage = data;
     setTimeout(() => this.subscriptionMessage = '', this.MESSAGE_DURATION_MS);
   }
   addBillSubmitEventHandler(data: any): void {
-    this.toggleAddBill(true);
     this.getAllBills();
     this.billMessage = data;
     setTimeout(() => this.billMessage = '', this.MESSAGE_DURATION_MS);
   }
   addAutoTransferSubmitEventHandler(data: any): void {
-    this.toggleAddAutoTransfer(true);
     this.getAllAutoTransfers();
     this.autoTransferMessage = data;
     setTimeout(() => this.autoTransferMessage = '', this.MESSAGE_DURATION_MS);
@@ -107,96 +212,6 @@ export class SeeExpensesComponent implements OnInit {
   //  this.toggleEditAutoTransferDisplay(true, false);
   //  this.autoTransferMessage = data;
   //  setTimeout(() => this.autoTransferMessage = '', this.MESSAGE_DURATION_MS);
-  //}
-
-  toggleAddSubscription(doSlide?: boolean): void {
-    this.addSubscriptionDisplay = !this.addSubscriptionDisplay;
-    if (doSlide)
-      if (this.addSubscriptionDisplay) {
-        this._renderer.addClass(this.subscriptionTable.nativeElement, 'tableSlideDown');
-        this._renderer.addClass(this.billSection.nativeElement, 'tableSlideDown');
-        this._renderer.addClass(this.autoTransferSection.nativeElement, 'tableSlideDown');
-      } else {
-        this._renderer.removeClass(this.subscriptionTable.nativeElement, 'tableSlideDown');
-        this._renderer.removeClass(this.billSection.nativeElement, 'tableSlideDown');
-        this._renderer.removeClass(this.autoTransferSection.nativeElement, 'tableSlideDown');
-      }
-  }
-  toggleAddBill(doSlide?: boolean): void {
-    this.addBillDisplay = !this.addBillDisplay;
-    if (doSlide)
-      if (this.addBillDisplay) {
-        this._renderer.addClass(this.billTable.nativeElement, 'tableSlideDown');
-        this._renderer.addClass(this.autoTransferSection.nativeElement, 'tableSlideDown');
-      } else {
-        this._renderer.removeClass(this.billTable.nativeElement, 'tableSlideDown');
-        this._renderer.removeClass(this.autoTransferSection.nativeElement, 'tableSlideDown');
-      }
-  }
-  toggleAddAutoTransfer(doSlide?: boolean): void {
-    this.addAutoTransferDisplay = !this.addAutoTransferDisplay;
-    if (doSlide)
-      if (this.addAutoTransferDisplay) {
-        this._renderer.addClass(this.autoTransferTable.nativeElement, 'tableSlideDown');
-      } else {
-        this._renderer.removeClass(this.autoTransferTable.nativeElement, 'tableSlideDown');
-      }
-  }
-
-  //toggleEditSubscription(subscriptionId?: number) {
-  //  if (this.addSubscriptionDisplay) {
-  //    this.toggleAddSubscription();
-  //    setTimeout(() => {
-  //      if (typeof subscriptionId !== 'undefined') {
-  //        this.getEditSubscription(subscriptionId);
-  //        if (subscriptionId != this.editSubscription?.subscriptionId)
-  //          this.toggleEditSubscriptionDisplay(true, true);
-  //        else
-  //          this.toggleEditSubscriptionDisplay(true);
-  //      } else
-  //        this.toggleEditSubscriptionDisplay(true, false);
-  //    }, 300);
-  //  } else {
-  //    if (typeof subscriptionId !== 'undefined') {
-  //      this.getEditSubscription(subscriptionId);
-  //      if (subscriptionId != this.editSubscription?.subscriptionId)
-  //        this.toggleEditSubscriptionDisplay(true, true);
-  //      else
-  //        this.toggleEditSubscriptionDisplay(true);
-  //    } else
-  //      this.toggleEditSubscriptionDisplay(true, false);
-  //  }
-  //}
-  //toggleEditSubscriptionDisplay(doSlide: boolean, doDisplay?: boolean): void {
-  //  if (typeof doDisplay === 'undefined') {
-  //    this.editSubscriptionDisplay = !this.editSubscriptionDisplay;
-  //    if (doSlide)
-  //      if (this.editSubscriptionDisplay) {
-  //        this._renderer.addClass(this.subscriptionTable.nativeElement, 'tableSlideDown');
-  //        this._renderer.removeClass(this.billSection.nativeElement, 'tableSlideDown');
-  //        this._renderer.addClass(this.autoTransferSection.nativeElement, 'tableSlideDown');
-  //      }
-  //  } else {
-  //    this.editSubscriptionDisplay = doDisplay!;
-  //    if (doSlide)
-  //      if (this.editSubscriptionDisplay) {
-  //        this._renderer.addClass(this.subscriptionTable.nativeElement, 'tableSlideDown');
-  //        this._renderer.removeClass(this.billSection.nativeElement, 'tableSlideDown');
-  //        this._renderer.addClass(this.autoTransferSection.nativeElement, 'tableSlideDown');
-  //      }
-  //  }
-  //}
-  //toggleEditBill(billId?: number) {
-
-  //}
-  //toggleEditBillDisplay(doSlide: boolean, doDisplay?: boolean): void {
-
-  //}
-  //toggleEditAutoTransfer(autoTransferId?: number) {
-
-  //}
-  //toggleEditAutoTransferDisplay(doSlide: boolean, doDisplay?: boolean): void {
-
   //}
 
   //getEditSubscription(subscriptionId: number): void {

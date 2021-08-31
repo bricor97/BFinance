@@ -13,27 +13,54 @@ import { SortByBankPipe } from '../../Pipes/sort-by-bank.pipe';
 export class SeeAccountsComponent implements OnInit {
 
   accounts?: GetAccount[];
-  addAcctDisplay: boolean     = false;
-  //editAcctDisplay: boolean = false;
-  //editAccount?: GetAccount;
   message: string             = "";
   MESSAGE_DURATION_MS: number = 4000;
-  accountSort: string[] = ['bank', 'name', 'type', 'number'];
+  accountSort: string[] = [
+    'bank', 'name', 'type', 'number'
+  ];
   selectedSort: string = this.accountSort[0];
 
-  @ViewChild('account_table') accountTable!: ElementRef;
-
-  constructor(private _accountService: AccountService, private _renderer: Renderer2,
-    private _sortByBankPipe: SortByBankPipe) { }
+  constructor(private _accountService: AccountService, private _sortByBankPipe: SortByBankPipe) { }
 
   ngOnInit(): void {
+    console.log("JD");
     this.getAllAccounts();
+    console.log("HDD");
   }
 
   getAllAccounts(): void {
-    this._accountService.getAllAcounts().subscribe(
-      accounts => this.accounts = this._sortByBankPipe.transform(accounts)
+    this._accountService.getAllAccounts().subscribe(
+      accounts => this.accounts = this._sortByBankPipe.transform(accounts),
+      () => { }, () => console.log(this.accounts)
     );
+  }
+
+  sortAccounts(sortCriteria: string): void {
+    if (sortCriteria == 'bank') {
+      this.accounts = this.accounts!.sort((acct1, acct2) => {
+        if (acct1.accountBank < acct2.accountBank) return -1;
+        else if (acct1.accountBank > acct2.accountBank) return 1;
+        return 0;
+      });
+    } else if (sortCriteria == 'name') {
+      this.accounts = this.accounts!.sort((acct1, acct2) => {
+        if (acct1.accountName < acct2.accountName) return -1;
+        else if (acct1.accountName > acct2.accountName) return 1;
+        return 0;
+      });
+    } else if (sortCriteria == 'type') {
+      this.accounts = this.accounts!.sort((acct1, acct2) => {
+        if (acct1.accountType < acct2.accountType) return -1;
+        else if (acct1.accountType > acct2.accountType) return 1;
+        return 0;
+      });
+    } else if (sortCriteria == 'number') {
+      this.accounts = this.accounts!.sort((acct1, acct2) => {
+        if (acct1.accountNumber < acct2.accountNumber) return -1;
+        else if (acct1.accountNumber > acct2.accountNumber) return 1;
+        return 0;
+      });
+    }
   }
 
   deleteAccount(accountId: number): void {
@@ -50,7 +77,6 @@ export class SeeAccountsComponent implements OnInit {
   }
 
   addSubmitEventHandler(data: any): void {
-    this.toggleAddAccount(true);
     this.getAllAccounts();
     this.message = data;
     setTimeout(() => this.message = '', this.MESSAGE_DURATION_MS);
@@ -61,71 +87,6 @@ export class SeeAccountsComponent implements OnInit {
   //  this.getAllAccounts();
   //  this.message = data;
   //  setTimeout(() => this.message = '', this.MESSAGE_DURATION_MS);
-  //}
-
-  toggleAddAccount(doSlide?: boolean): void {
-    //if (this.editAcctDisplay) {
-    //  this.toggleEditDisplay(false);
-    //  setTimeout(() => {
-    //    this.addAcctDisplay = !this.addAcctDisplay;
-    //    if (doSlide)
-    //      this.addAcctDisplay ?
-    //        this._renderer.addClass(this.accountTable.nativeElement, 'tableSlideDown') :
-    //        this._renderer.removeClass(this.accountTable.nativeElement, 'tableSlideDown');
-    //  }, 300);
-    //} else {
-    //  this.addAcctDisplay = !this.addAcctDisplay;
-    //  if (doSlide)
-    //    this.addAcctDisplay ?
-    //      this._renderer.addClass(this.accountTable.nativeElement, 'tableSlideDown') :
-    //      this._renderer.removeClass(this.accountTable.nativeElement, 'tableSlideDown');
-    //}
-
-    this.addAcctDisplay = !this.addAcctDisplay;
-    if (doSlide)
-      this.addAcctDisplay ?
-        this._renderer.addClass(this.accountTable.nativeElement, 'tableSlideDown') :
-        this._renderer.removeClass(this.accountTable.nativeElement, 'tableSlideDown');
-  }
-
-  //toggleEditAccount(accountId?: number): void {
-  //  if (this.addAcctDisplay) {
-  //    this.toggleAddAccount();
-  //    setTimeout(() => {
-  //      if (typeof accountId !== 'undefined') {
-  //        this.getEditAccount(accountId);
-  //        if (accountId != this.editAccount?.accountId)
-  //          this.toggleEditDisplay(true, true);
-  //        else
-  //          this.toggleEditDisplay(true);
-  //      } else
-  //        this.toggleEditDisplay(true, false);
-  //    }, 300);
-  //  } else {
-  //    if (typeof accountId !== 'undefined') {
-  //      this.getEditAccount(accountId);
-  //      if (accountId != this.editAccount?.accountId)
-  //        this.toggleEditDisplay(true, true);
-  //      else
-  //        this.toggleEditDisplay(true);
-  //    } else
-  //      this.toggleEditDisplay(true, false);
-  //  }
-  //}
-  //toggleEditDisplay(doSlide: boolean, doDisplay?: boolean): void {
-  //  if (typeof doDisplay === 'undefined') {
-  //    this.editAcctDisplay = !this.editAcctDisplay;
-  //    if (doSlide)
-  //      this.editAcctDisplay ?
-  //        this._renderer.addClass(this.accountTable.nativeElement, 'tableSlideDown') :
-  //        this._renderer.removeClass(this.accountTable.nativeElement, 'tableSlideDown');
-  //  } else {
-  //    this.editAcctDisplay = doDisplay!;
-  //    if (doSlide)
-  //      this.editAcctDisplay ?
-  //        this._renderer.addClass(this.accountTable.nativeElement, 'tableSlideDown') :
-  //        this._renderer.removeClass(this.accountTable.nativeElement, 'tableSlideDown');
-  //  }
   //}
 
   //getEditAccount(accountId: number): void {

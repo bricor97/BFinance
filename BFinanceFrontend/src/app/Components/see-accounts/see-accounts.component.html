@@ -1,5 +1,3 @@
-<!--*ngIf="this.message != ''"-->
-
 <div class="main">
 
   <div class="message-container">
@@ -16,26 +14,18 @@
 
   <div class="buttonsContainer">
     <div class="buttons">
-      <button *ngIf="!addAcctDisplay" (click)="toggleAddAccount(true)" class="tr-bl-sweep-btn">Add account</button>
-      <button *ngIf="addAcctDisplay" (click)="toggleAddAccount(true)" class="tr-bl-sweep-btn">Cancel</button>
+      <button class="mid-edge-sweep-btn" routerLink="/Account/AddAccount">Add account</button>
       <!--<button *ngIf="this.editAcctDisplay" (click)="toggleEditAccount()">Cancel</button>-->
-      <select name="sortDropdown" [(ngModel)]="selectedSort" id="sortAcctDpdwn">
-        <option value="{{selectedSort}}" disabled selected hidden>{{selectedSort | titlecase}}</option>
-        <option *ngFor="let sortColumn of accountSort" value="{{sortColumn}}">{{sortColumn | titlecase}}</option>
-      </select>
+      <label for="sortDropdown">Sort by:  
+        <select name="sortDropdown" [(ngModel)]="selectedSort" class="sortDpdwn" (click)="sortAccounts(selectedSort)">
+          <option value="{{selectedSort}}" disabled selected hidden>{{selectedSort | titlecase}}</option>
+          <option *ngFor="let sortColumn of accountSort" value="{{sortColumn}}">{{sortColumn | titlecase}}</option>
+        </select>
+      </label>
     </div>
   </div>
 
-  <!--*ngIf="this.addAcctDisplay && !this.editAcctDisplay"-->
-  <div class="dynamicFormComponentContainer" *ngIf="this.addAcctDisplay" @scaleUp @scaleDown>
-    <app-add-account class="dynamicFormComponent" (formSubmit)="addSubmitEventHandler($event)"></app-add-account>
-  </div>
-
-  <!--<div class="dynamicFormComponentContainer" *ngIf="this.editAcctDisplay && !this.addAcctDisplay" @scaleUp @scaleDown>
-    <app-edit-account class="dynamicFormComponent" [editAccount]="editAccount!" (formSubmit)="editSubmitEventHandler($event)"></app-edit-account>
-  </div>-->
-
-  <div #account_table class="tableContainer">
+  <div class="tableContainer">
     <table>
       <caption style="font-size: 2em; font-weight: bold;">Accounts</caption>
       <thead>

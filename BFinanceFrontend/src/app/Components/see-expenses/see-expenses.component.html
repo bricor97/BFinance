@@ -16,27 +16,23 @@
 
     <div class="buttonsContainer">
       <div class="buttons">
-        <button *ngIf="!addSubscriptionDisplay" (click)="toggleAddSubscription(true)" class="tr-bl-sweep-btn">
+        <button class="mid-edge-sweep-btn" routerLink="/Expense/AddSubscription">
           Add subscription
         </button>
-        <button *ngIf="addSubscriptionDisplay" (click)="toggleAddSubscription(true)" class="tr-bl-sweep-btn">
-          Cancel
-        </button>
-        <!--<button *ngIf="editSubscriptionDisplay" (click)="toggleEditSubscription()">
+        <!--<button>
           Cancel
         </button>-->
+        <label for="sortDropdown">
+          Sort by:
+          <select name="sortDropdown" [(ngModel)]="selectedSubSort" class="sortDpdwn" (click)="sortSubscriptions(selectedSubSort)">
+            <option value="{{selectedSubSort}}" disabled selected hidden>{{selectedSubSort | titlecase}}</option>
+            <option *ngFor="let sortColumn of subBillSort" value="{{sortColumn}}">{{sortColumn | titlecase}}</option>
+          </select>
+        </label>
       </div>
     </div>
 
-    <div class="dynamicFormComponentContainer" *ngIf="addSubscriptionDisplay" @scaleUp @scaleDown>
-      <app-add-subscription class="dynamicFormComponent" (formSubmit)="addSubscriptionSubmitEventHandler($event)"></app-add-subscription>
-    </div>
-
-    <!--<div class="dynamicFormComponentContainer" *ngIf="editSubscriptionDisplay" @scaleUp @scaleDown>
-      <app-edit-subscription class="dynamicFormComponent" [editSubscription]="editSubscription!" (formSubmit)="editSubscriptionSubmitEventHandler($event)"></app-edit-subscription>
-    </div>-->
-
-    <div #subscription_table class="tableContainer">
+    <div class="tableContainer">
       <table>
         <caption style="font-size: 2em; font-weight: bold;">Subscriptions</caption>
         <tr>
@@ -96,23 +92,20 @@
 
     <div class="buttonsContainer">
       <div class="buttons">
-        <button *ngIf="!addBillDisplay" (click)="toggleAddBill(true)" class="tr-bl-sweep-btn">
+        <button class="mid-edge-sweep-btn" routerLink="/Expense/AddBill">
           Add bill
         </button>
-        <button *ngIf="addBillDisplay" (click)="toggleAddBill(true)" class="tr-bl-sweep-btn">
-          Cancel
-        </button>
-        <!--<button>
-        Cancel
-      </button>-->
+        <label for="sortDropdown">
+          Sort by:
+          <select name="sortDropdown" [(ngModel)]="selectedBillSort" class="sortDpdwn" (click)="sortBills(selectedBillSort)">
+            <option value="{{selectedBillSort}}" disabled selected hidden>{{selectedBillSort | titlecase}}</option>
+            <option *ngFor="let sortColumn of subBillSort" value="{{sortColumn}}">{{sortColumn | titlecase}}</option>
+          </select>
+        </label>
       </div>
     </div>
 
-    <div class="dynamicFormComponentContainer" *ngIf="addBillDisplay" @scaleUp @scaleDown>
-      <app-add-bill class="dynamicFormComponent" (formSubmit)="addBillSubmitEventHandler($event)"></app-add-bill>
-    </div>
-
-    <div #bill_table class="tableContainer">
+    <div class="tableContainer">
       <table>
         <caption style="font-size: 2em; font-weight: bold;">Bills</caption>
         <tr>
@@ -172,23 +165,20 @@
 
     <div class="buttonsContainer">
       <div class="buttons">
-        <button *ngIf="!addAutoTransferDisplay" (click)="toggleAddAutoTransfer(true)" class="tr-bl-sweep-btn">
+        <button class="mid-edge-sweep-btn" routerLink="/Expense/AddAutoTransfer">
           Add auto transfer
         </button>
-        <button *ngIf="addAutoTransferDisplay" (click)="toggleAddAutoTransfer(true)" class="tr-bl-sweep-btn">
-          Cancel
-        </button>
-        <!--<button>
-        Cancel
-        </button>-->
+        <label for="sortDropdown">
+          Sort by:
+          <select name="sortDropdown" [(ngModel)]="selectedAutoTSort" class="sortDpdwn" (click)="sortAutoTransfers(selectedAutoTSort)">
+            <option value="{{selectedAutoTSort}}" disabled selected hidden>{{selectedAutoTSort | titlecase}}</option>
+            <option *ngFor="let sortColumn of autoTSort" value="{{sortColumn}}">{{sortColumn | titlecase}}</option>
+          </select>
+        </label>
       </div>
     </div>
 
-    <div class="dynamicFormComponentContainer" *ngIf="addAutoTransferDisplay" @scaleUp @scaleDown>
-      <app-add-auto-transfer class="dynamicFormComponent" (formSubmit)="addAutoTransferSubmitEventHandler($event)"></app-add-auto-transfer>
-    </div>
-
-    <div #auto_transfer_table class="tableContainer">
+    <div class="tableContainer">
       <table>
         <caption style="font-size: 2em; font-weight: bold;">Automatic Transfers</caption>
         <tr>
